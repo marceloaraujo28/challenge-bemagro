@@ -1,0 +1,17 @@
+.page-not-found {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-direction: column;
+  gap: 20px;
+
+  .number {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 30px;
+  }
+}
