@@ -10,6 +10,10 @@ import { UserListComponent } from '../shared/components/user-list/user-list.comp
 import { PagesRoutingModule } from './pages-routing.module';
 import { UserDetailPageComponent } from './user-detail-page/user-detail-page.component';
 import { UsersPageComponent } from './users-page/users-page.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,13 @@ import { UsersPageComponent } from './users-page/users-page.component';
   imports: [
     CommonModule,
     PagesRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [UserService, StorageService],
 })

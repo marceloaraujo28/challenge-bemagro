@@ -1,0 +1,78 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .back-home a {
+    color: #696969;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  header {
+    width: 100%;
+    min-height: 300px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+
+    .img {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .infos-user {
+      display: flex;
+      color: #696969;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .username {
+      font-size: 30px;
+      color: #d9d9d9;
+    }
+
+    .description {
+      font-size: 15px;
+      color: #d9d9d9;
+    }
+
+    .button {
+      height: 48px;
+      background-color: #1db954;
+      color: #fff;
+    }
+  }
+
+  .not-found-location {
+    margin-top: 30px;
+    color: #d9d9d9;
+    font-size: 15px;
+  }
+}
+
+.map-container {
+  position: relative;
+  width: 100vw;
+  height: 500px;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+}

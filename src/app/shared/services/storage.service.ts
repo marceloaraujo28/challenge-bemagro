@@ -41,4 +41,13 @@ export class StorageService {
 
     return true;
   }
+
+  public removeItem(id: number) {
+    const list = this.getList();
+    const remove = list ? list.filter((item) => item.id != id) : [];
+
+    localStorage.setItem('user-list', JSON.stringify(remove));
+
+    return remove;
+  }
 }

@@ -1,20 +1,30 @@
-<h1>Lista de usuários</h1>
+<main>
+  <section class="header">
+    <img
+      class="logo"
+      src="../../../assets/logo-bemagro.png"
+      alt="Logo BemAgro"
+    />
+  </section>
 
-<p>Digite o nome de um usuário para encontrar um registro.</p>
-
-<hr />
-
-<div class="pesquisa">
-  <form action="" [formGroup]="resourceForm">
-    <input type="text" formControlName="search" placeholder="" />
-    <button type="button" (click)="clear()">Limpar</button>
-  </form>
-</div>
-
-<div class="message-notfound" *ngIf="notfound">
-  {{ notfoundMessage }}
-</div>
-
-<div class="listagem" *ngIf="!notfound">
-  <app-user-list [userList]="userList"></app-user-list>
-</div>
+  <section class="search">
+    <form action="" [formGroup]="resourceForm" class="form-container">
+      <mat-form-field class="form-field">
+        <mat-label>Username github</mat-label>
+        <input formControlName="search" matInput placeholder="Ex. username10" />
+        <mat-hint *ngIf="notfound" class="message-notfound">{{
+          notfoundMessage
+        }}</mat-hint>
+      </mat-form-field>
+      <button class="button" mat-raised-button type="button" (click)="clear()">
+        Limpar
+      </button>
+    </form>
+  </section>
+  <section class="section-user-list">
+    <app-user-list
+      [userList]="userList"
+      (removeItem)="removeItem($event)"
+    ></app-user-list>
+  </section>
+</main>

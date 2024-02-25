@@ -1,0 +1,58 @@
+main {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  min-height: 230px;
+  background-color: #1a1a1a;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    width: 400px;
+  }
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: -50px;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .form-field {
+    padding-top: 22px;
+    width: 300px;
+  }
+
+  .button {
+    height: 48px;
+    background-color: #1db954;
+    color: #fff;
+  }
+
+  .message-notfound {
+    color: red;
+  }
+}
+
+.section-user-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}

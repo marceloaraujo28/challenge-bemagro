@@ -1,15 +1,31 @@
-<div class="user-profile" *ngIf="user">
-  <a routerLink="/">Voltar</a>
-  <div class="avatar">
-    <img [src]="user.avatar_url" [alt]="user.name" /><br />
-    Name: {{ user.name }}<br />
-    Login: {{ user.login }}<br />
-    Localização: {{ user.location }}
+<main *ngIf="user">
+  <header>
+    <span class="back-home"
+      ><a routerLink="/"
+        ><mat-icon class="icon-size">arrow_back</mat-icon>Voltar</a
+      ></span
+    >
+    <div class="img">
+      <img [src]="user.avatar_url" [alt]="user.name" width="200" height="200" />
+    </div>
+    <span class="username">{{ user.login }}</span>
+    <span class="description">{{ user.bio }}</span>
+    <div class="infos-user">
+      <mat-icon>group</mat-icon>
+      <span>{{ user.followers }} seguidores</span>
+      <span>{{ user.following }} seguindo</span>
+    </div>
+    <span class="infos-user" *ngIf="user.location"
+      ><mat-icon>location_on</mat-icon>{{ user.location }}</span
+    >
+    <button class="button" mat-raised-button type="button">VER PROJETOS</button>
+  </header>
+  <div *ngIf="!user.location" class="not-found-location">
+    Mapa não pode ser exibido pois a localidade não está definida
   </div>
-</div>
-
-<div class="map-container">
-  <div class="map-frame">
-    <div id="map"></div>
+  <div class="map-container" *ngIf="user.location">
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
   </div>
-</div>
+</main>

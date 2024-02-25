@@ -8,7 +8,7 @@ import { StorageService } from '../../shared/services/storage.service';
 @Component({
   selector: 'app-user-detail-page',
   templateUrl: './user-detail-page.component.html',
-  styleUrl: './user-detail-page.component.sass',
+  styleUrl: './user-detail-page.component.scss',
 })
 export class UserDetailPageComponent implements OnInit, AfterViewInit {
   id!: number;
@@ -21,29 +21,29 @@ export class UserDetailPageComponent implements OnInit, AfterViewInit {
   ) {}
 
   private async initMap() {
-    const provider = new OpenStreetMapProvider();
-    const results = await provider.search({
+    const openStreetProvider = new OpenStreetMapProvider();
+    const locationResult = await openStreetProvider.search({
       query: String(this.user?.location),
     });
 
     this.map = L.map('map', {
-      center: [results[0].y, results[0].x],
+      center: [locationResult[0].y, locationResult[0].x],
       zoom: 13,
     });
 
     const tiles = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        maxZoom: 16,
-        minZoom: 5,
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 16,
+        minZoom: 5,
       }
     );
 
     tiles.addTo(this.map);
 
-    const circle = L.circle([results[0].y, results[0].x], {
+    const circle = L.circle([locationResult[0].y, locationResult[0].x], {
       color: '#ff0000',
       radius: 3000,
     });
