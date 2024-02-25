@@ -1,0 +1,53 @@
+.list-container {
+  width: 600px;
+  background-color: #262626;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  overflow: hidden;
+  .user-card {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333333;
+
+    .left-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 10px;
+      gap: 8px;
+
+      .img {
+        width: 70px;
+        height: 70px;
+        background-color: red;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .infos {
+        display: flex;
+        flex-direction: column;
+        height: 70px;
+        gap: 3px;
+
+        color: #696969;
+
+        .name {
+          color: #d9d9d9;
+        }
+      }
+    }
+
+    .right-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .details-button {
+        color: #1db954;
+      }
+    }
+  }
+}

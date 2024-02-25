@@ -1,4 +1,31 @@
-<ul *ngIf="userList.length">
+<div class="list-container" *ngIf="userList.length">
+  <div class="user-card" *ngFor="let user of userList">
+    <div class="left-card">
+      <div class="img">
+        <img [src]="user.avatar_url" width="70" height="70" [alt]="user.name" />
+      </div>
+      <div class="infos">
+        <span class="name">{{ user.name }}</span>
+        <span>{{ user.login }}</span>
+        <span>{{ user.location }}</span>
+      </div>
+    </div>
+    <div class="right-card">
+      <button
+        [routerLink]="['user-detail', user.id]"
+        mat-button
+        class="details-button"
+      >
+        Detalhes
+      </button>
+      <button mat-button color="warn" (click)="removeElement(user.id)">
+        Excluir
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- <ul *ngIf="userList.length">
   <li *ngFor="let user of userList">
     <a
       [routerLink]="['user-detail', user.id]"
@@ -8,4 +35,4 @@
       {{ user.login }} <button type="button">+</button>
     </a>
   </li>
-</ul>
+</ul> -->
