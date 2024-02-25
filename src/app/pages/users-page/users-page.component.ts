@@ -8,7 +8,7 @@ import { debounceTime } from 'rxjs';
 @Component({
   selector: 'app-users-page',
   templateUrl: './users-page.component.html',
-  styleUrl: './users-page.component.sass',
+  styleUrl: './users-page.component.scss',
 })
 export class UsersPageComponent {
   resourceForm: FormGroup;
@@ -31,7 +31,7 @@ export class UsersPageComponent {
 
   ngOnInit(): void {
     this.resourceForm.valueChanges
-      .pipe(debounceTime(500))
+      .pipe(debounceTime(1000))
       .subscribe((inputs) => {
         if (!inputs.search) {
           this.notfound = false;
@@ -50,7 +50,7 @@ export class UsersPageComponent {
           },
           error: () => {
             this.notfound = true;
-            this.notfoundMessage = 'Resultado não encontrado';
+            this.notfoundMessage = 'Usuário não encontrado';
           },
         });
       });
@@ -58,5 +58,9 @@ export class UsersPageComponent {
 
   clear() {
     this.resourceForm.reset();
+  }
+
+  removeItem(id: number) {
+    this.userList = this._storageService.removeItem(id);
   }
 }
