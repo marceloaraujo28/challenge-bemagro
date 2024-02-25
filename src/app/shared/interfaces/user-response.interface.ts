@@ -1,6 +1,6 @@
 export interface UserResponse {
   login?: string;
-  id?: number;
+  id: number;
   node_id?: string;
   avatar_url?: string;
   gravatar_id?: string;
