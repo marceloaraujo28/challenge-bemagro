@@ -8,7 +8,7 @@ import { StorageService } from '../../shared/services/storage.service';
 @Component({
   selector: 'app-user-detail-page',
   templateUrl: './user-detail-page.component.html',
-  styleUrl: './user-detail-page.component.sass',
+  styleUrl: './user-detail-page.component.scss',
 })
 export class UserDetailPageComponent implements OnInit, AfterViewInit {
   id!: number;
@@ -34,10 +34,10 @@ export class UserDetailPageComponent implements OnInit, AfterViewInit {
     const tiles = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        maxZoom: 16,
-        minZoom: 5,
         attribution:
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 16,
+        minZoom: 5,
       }
     );
 
