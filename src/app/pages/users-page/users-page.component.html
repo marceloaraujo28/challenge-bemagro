@@ -1,1 +1,20 @@
-<p>users-page works!</p>
+<h1>Lista de usuários</h1>
+
+<p>Digite o nome de um usuário para encontrar um registro.</p>
+
+<hr />
+
+<div class="pesquisa">
+  <form action="" [formGroup]="resourceForm">
+    <input type="text" formControlName="search" placeholder="" />
+    <button type="button" (click)="clear()">Limpar</button>
+  </form>
+</div>
+
+<div class="message-notfound" *ngIf="notfound">
+  {{ notfoundMessage }}
+</div>
+
+<div class="listagem" *ngIf="!notfound">
+  <app-user-list [userList]="userList"></app-user-list>
+</div>

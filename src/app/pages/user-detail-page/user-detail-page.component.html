@@ -1,1 +1,15 @@
-<p>user-detail-page works!</p>
+<div class="user-profile" *ngIf="user">
+  <a routerLink="/">Voltar</a>
+  <div class="avatar">
+    <img [src]="user.avatar_url" [alt]="user.name" /><br />
+    Name: {{ user.name }}<br />
+    Login: {{ user.login }}<br />
+    Localização: {{ user.location }}
+  </div>
+</div>
+
+<div class="map-container">
+  <div class="map-frame">
+    <div id="map"></div>
+  </div>
+</div>
