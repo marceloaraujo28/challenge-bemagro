@@ -21,13 +21,13 @@ export class UserDetailPageComponent implements OnInit, AfterViewInit {
   ) {}
 
   private async initMap() {
-    const provider = new OpenStreetMapProvider();
-    const results = await provider.search({
+    const openStreetProvider = new OpenStreetMapProvider();
+    const locationResult = await openStreetProvider.search({
       query: String(this.user?.location),
     });
 
     this.map = L.map('map', {
-      center: [results[0].y, results[0].x],
+      center: [locationResult[0].y, locationResult[0].x],
       zoom: 13,
     });
 
@@ -43,7 +43,7 @@ export class UserDetailPageComponent implements OnInit, AfterViewInit {
 
     tiles.addTo(this.map);
 
-    const circle = L.circle([results[0].y, results[0].x], {
+    const circle = L.circle([locationResult[0].y, locationResult[0].x], {
       color: '#ff0000',
       radius: 3000,
     });
