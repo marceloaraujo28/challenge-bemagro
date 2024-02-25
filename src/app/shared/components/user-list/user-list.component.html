@@ -1,1 +1,11 @@
-<p>user-list works!</p>
+<ul *ngIf="userList.length">
+  <li *ngFor="let user of userList">
+    <a
+      [routerLink]="['user-detail', user.id]"
+      routerLinkActive="router-link-active"
+      title="Visualizar informações"
+    >
+      {{ user.login }} <button type="button">+</button>
+    </a>
+  </li>
+</ul>

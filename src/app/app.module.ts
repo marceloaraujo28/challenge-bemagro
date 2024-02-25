@@ -7,7 +7,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { UserListComponent } from './shared/components/user-list/user-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent, UserListComponent],
+  declarations: [AppComponent, NotFoundPageComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
