@@ -18,7 +18,14 @@
     <span class="infos-user" *ngIf="user.location"
       ><mat-icon>location_on</mat-icon>{{ user.location }}</span
     >
-    <button class="button" mat-raised-button type="button">VER PROJETOS</button>
+    <button
+      [routerLink]="['/user-repo', user.login, user.id]"
+      class="button"
+      mat-raised-button
+      type="button"
+    >
+      VER PROJETOS
+    </button>
   </header>
   <div *ngIf="!user.location" class="not-found-location">
     Mapa não pode ser exibido pois a localidade não está definida
