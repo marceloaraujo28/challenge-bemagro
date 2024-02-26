@@ -32,3 +32,10 @@ export interface UserResponse {
   created_at?: string;
   updated_at?: string;
 }
+
+export interface UserResponseRepo {
+  html_url: string;
+  description: string;
+  language: string;
+  name: string;
+}

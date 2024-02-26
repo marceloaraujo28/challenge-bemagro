@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UserResponse } from '../interfaces/user-response.interface';
+import {
+  UserResponse,
+  UserResponseRepo,
+} from '../interfaces/user-response.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,5 +16,11 @@ export class UserService {
 
   public getUserByName(userName: string): Observable<UserResponse> {
     return this._http.get<UserResponse>(`${this.host}/users/${userName}`);
+  }
+
+  public getReposByName(userName: string): Observable<UserResponseRepo[]> {
+    return this._http.get<UserResponseRepo[]>(
+      `${this.host}/users/${userName}/repos`
+    );
   }
 }
