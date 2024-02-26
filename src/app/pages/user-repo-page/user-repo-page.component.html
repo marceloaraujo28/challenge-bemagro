@@ -1,0 +1,32 @@
+<main *ngIf="repoList">
+  <header>
+    <h1>Repositórios</h1>
+    <button
+      [routerLink]="['/user-detail', id]"
+      class="button"
+      mat-raised-button
+      type="button"
+    >
+      Voltar
+    </button>
+  </header>
+
+  <section class="repo-card-container">
+    <div class="repo-card" *ngFor="let repo of repoList">
+      <span class="name">{{ repo.name }}</span>
+      <span class="description">{{ repo.description }}</span>
+      <span class="language"><mat-icon>code</mat-icon>{{ repo.language }}</span>
+      <a
+        href="{{ repo.html_url }}"
+        target="_blank"
+        class="button"
+        mat-raised-button
+      >
+        Acessar Projeto
+      </a>
+    </div>
+    <div *ngIf="!repoList.length" class="not-found-repo">
+      Esse usuário não possui nenhum repositório
+    </div>
+  </section>
+</main>
