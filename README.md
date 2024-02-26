@@ -1,27 +1,44 @@
-# Bemagro
+<h1 align="center">BemAgro Challenge</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+<br>
 
-## Development server
+<img src="/src/assets/project.png" alt="" />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## :dart: About
 
-## Code scaffolding
+In this project, I created an application to fetch users from the GitHub API. I implemented a local storage feature using LocalStorage to maintain a list of searched users. Additionally, the application displays details about each user found. For building this application, I utilized the Angular framework, leveraging its robust structure and rapid development capabilities. Integration with the GitHub API provides dynamic access to user profiles, enriching the user experience. This project represents an opportunity to explore Angular and its features, while offering a practical and useful application for searching and viewing GitHub user profiles.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :rocket: Technologies
 
-## Build
+The following tools were used in this project:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [AngularJS](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Leaflet](https://leafletjs.com/)
+- [Scss](https://sass-lang.com/)
 
-## Running unit tests
+## :white_check_mark: Requirements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed. Additionally, make sure to install the Angular CLI globally by running the following command:
 
-## Running end-to-end tests
+```bash
+$ npm install -g @angular/cli
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## :checkered_flag: Starting
 
-## Further help
+```bash
+# Clone this project
+$ git clone https://github.com/marceloaraujo28/challenge-bemagro
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Access the project directory
+$ cd challenge-bemagro
+
+# Install dependencies
+$ npm install
+
+# Run the project
+$ ng serve
+
+# The project will initialize at <http://localhost:4200/>
+```
