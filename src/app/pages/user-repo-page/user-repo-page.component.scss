@@ -1,0 +1,74 @@
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  header {
+    width: 100%;
+    min-height: 100px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: #d9d9d9;
+    font-size: 40px;
+  }
+
+  .repo-card-container {
+    margin-top: 10px;
+    width: 600px;
+    padding: 20px;
+    background-color: #262626;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .repo-card {
+      background-color: #0d0d0d;
+      border: 1px solid #333333;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding-top: 10px;
+
+      .name {
+        font-size: 25px;
+        color: #d9d9d9;
+      }
+
+      .description {
+        font-size: 15px;
+        color: #696969;
+      }
+
+      .language {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d9d9d9;
+        gap: 10px;
+      }
+
+      .button {
+        height: 35px;
+        background-color: #1db954;
+        color: #fff;
+        width: 100%;
+      }
+    }
+
+    .not-found-repo {
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
